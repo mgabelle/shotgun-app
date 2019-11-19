@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core/core.module';
 import { ShotgunsComponent } from './components/shotguns/shotguns.component';
+import { ShotgunService } from './services/shotgun.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ShotgunsComponent } from './components/shotguns/shotguns.component';
     BrowserAnimationsModule,
     CoreModule
   ],
-  providers: [],
+  providers: [ShotgunService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

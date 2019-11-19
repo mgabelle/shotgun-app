@@ -5,3 +5,7 @@
 .menu-spacer {
   width: 15px;
 }
+
+.float-right {
+  margin-right: auto;
+}
