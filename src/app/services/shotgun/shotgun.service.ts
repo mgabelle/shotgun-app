@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Shotgun } from '../model/shotgun.model';
-import { ShotgunRoutes } from './routes/service-routes';
+import { Shotgun } from '../../model/shotgun.model';
+import { ShotgunRoutes } from '../routes/service-routes';
 
 @Injectable({
   providedIn: 'root'

@@ -21,3 +21,23 @@ export class ShotgunRoutes {
         return ShotgunRoutes.BASE_SHOTGUN_URL();
     }
 }
+
+export class FamilleRoutes {
+    private static BASE_FAMILLE_URL() {
+        return `${ServiceRoutes.BASE_API_URL()}/familles`;
+    }
+
+    public static GET_FAMILLES() {
+        return FamilleRoutes.BASE_FAMILLE_URL();
+    }
+}
+
+export class PartieCommunesRoutes {
+    private static BASE_PARTIE_COMMUNES_URL() {
+        return `${ServiceRoutes.BASE_API_URL()}/parties-communes`;
+    }
+
+    public static GET_PARTIES_COMMUNES() {
+        return PartieCommunesRoutes.BASE_PARTIE_COMMUNES_URL();
+    }
+}

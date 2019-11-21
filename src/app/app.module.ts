@@ -4,14 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core/core.module';
-import { ShotgunsComponent } from './components/shotguns/shotguns.component';
-import { ShotgunService } from './services/shotgun.service';
+import { CoreModule } from './core/core.module'
+import { ShotgunsComponent } from './components/shotguns/list-shotguns/shotguns.component';
+import { ShotgunService } from './services/shotgun/shotgun.service';
+import { CreateShotgunComponent } from './components/shotguns/create-shotgun/create-shotgun.component';
+import { CreateShotgunDialogComponent } from './components/shotguns/create-shotgun-dialog/create-shotgun-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShotgunsComponent
+    ShotgunsComponent,
+    CreateShotgunComponent,
+    CreateShotgunDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +24,7 @@ import { ShotgunService } from './services/shotgun.service';
     CoreModule
   ],
   providers: [ShotgunService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CreateShotgunDialogComponent]
 })
 export class AppModule { }

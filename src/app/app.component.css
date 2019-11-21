@@ -3,7 +3,11 @@
 }
 
 .menu-spacer {
-  width: 15px;
+  flex: 1 1 auto;
+}
+
+.small-menu-spacer {
+  margin-left: 15px;
 }
 
 .float-right {
