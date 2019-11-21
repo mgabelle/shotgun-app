@@ -1,6 +1,6 @@
 export class ServiceRoutes {
     public static BASE_API_URL() {
-        return 'http://localhost:8080/api';
+        return "http://localhost:8080/api";
     }
 }
 
@@ -17,7 +17,7 @@ export class ShotgunRoutes {
         return `${ShotgunRoutes.BASE_SHOTGUN_URL()}/${id}`;
     }
 
-    public static POST_SHOTGUNS() {
+    public static CREATE_SHOTGUN() {
         return ShotgunRoutes.BASE_SHOTGUN_URL();
     }
 }

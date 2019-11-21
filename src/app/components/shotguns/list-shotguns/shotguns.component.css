@@ -3,3 +3,7 @@ table {
     max-height: 400px;
     overflow: scroll;
 }
+
+th.mat-sort-header-sorted {
+  color: black;
+}
