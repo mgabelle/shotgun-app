@@ -40,4 +40,22 @@ export class PartieCommunesRoutes {
     public static GET_PARTIES_COMMUNES() {
         return PartieCommunesRoutes.BASE_PARTIE_COMMUNES_URL();
     }
+
+    public static GET_PARTIES_COMMUNES_SHOTGUNS() {
+      return `${this.GET_PARTIES_COMMUNES()}/shotguns`;
+  }
+}
+
+export class ResidenceRoutes {
+  private static BASE_RESIDENCE_URL() {
+    return `${ServiceRoutes.BASE_API_URL()}/residences`;
+  }
+
+  public static GET_RESIDENCES() {
+    return ResidenceRoutes.BASE_RESIDENCE_URL();
+  }
+
+  public static GET_RESIDENCES_SHOTGUNS() {
+    return `${ResidenceRoutes.BASE_RESIDENCE_URL()}/shotguns`;
+  }
 }

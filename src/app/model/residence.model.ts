@@ -1,4 +1,4 @@
-import { PartieCommune } from './partie-commune.model';
+import { PartieCommune } from "./partie-commune.model";
 
 export interface Residence {
   id: number;

@@ -1,3 +1,5 @@
+import { FamilleService } from "./services/famille/famille.service";
+import { PartieCommunesService } from "./services/partie-communes/partie-communes.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, LOCALE_ID } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
@@ -11,6 +13,12 @@ import { CreateShotgunDialogComponent } from "./components/shotguns/create-shotg
 import { SnackbarService } from "./services/shared/snackbar.service";
 import { registerLocaleData } from "@angular/common";
 import localeFr from "@angular/common/locales/fr";
+import { ListFamillesComponent } from "./components/familles/list-familles/list-familles.component";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { ErrorInterceptor } from "./core/interceptor/http.interceptor";
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from "@angular/material";
+import { ListResidencesComponent } from "./components/residences/list-residences/list-residences.component";
+import { ResidencesService } from "./services/residences/residences.service";
 
 registerLocaleData(localeFr, "fr");
 
@@ -19,7 +27,9 @@ registerLocaleData(localeFr, "fr");
     AppComponent,
     ShotgunsComponent,
     CreateShotgunComponent,
-    CreateShotgunDialogComponent
+    CreateShotgunDialogComponent,
+    ListFamillesComponent,
+    ListResidencesComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +39,17 @@ registerLocaleData(localeFr, "fr");
   ],
   providers: [
     ShotgunService,
+    PartieCommunesService,
+    ResidencesService,
+    FamilleService,
     SnackbarService,
-    { provide: LOCALE_ID, useValue: "fr-FR" }
+    { provide: LOCALE_ID, useValue: "fr-FR" },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } }
   ],
   bootstrap: [AppComponent],
   entryComponents: [CreateShotgunDialogComponent]

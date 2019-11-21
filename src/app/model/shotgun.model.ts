@@ -1,5 +1,5 @@
-import { PartieCommune } from './partie-commune.model';
-import { Famille } from './famille.model';
+import { PartieCommune } from "./partie-commune.model";
+import { Famille } from "./famille.model";
 
 export interface Shotgun {
   id: number;
