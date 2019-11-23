@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, Input } from "@angular/core";
 import { ShotgunService } from "src/app/services/shotgun/shotgun.service";
 import { Shotgun } from "../../../model/shotgun.model";
 import { MatSort, MatTableDataSource } from "@angular/material";
@@ -21,15 +21,26 @@ export class ShotgunsComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
+  @Input() listeShotguns: Array<Shotgun>;
+
   constructor(private shotgunService: ShotgunService) {
-    this.shotgunService.shotgunsList.subscribe((values: Array<Shotgun>) => {
-      this.dataSource = new MatTableDataSource(values);
-      this.dataSource.sort = this.sort;
-    });
+    if (!this.listeShotguns) {
+      this.shotgunService.shotgunsList.subscribe((values: Array<Shotgun>) => {
+        this.dataSource = new MatTableDataSource(values);
+        this.dataSource.sort = this.sort;
+      });
+    }
   }
 
   ngOnInit() {
-    this.shotgunService.getShoguns();
+    if (!this.listeShotguns) {
+      this.shotgunService.getShoguns();
+    }
+
+    if (this.listeShotguns) {
+      this.dataSource = new MatTableDataSource(this.listeShotguns);
+    }
+
     this.dataSource.sort = this.sort;
   }
 }

@@ -25,4 +25,12 @@ export class FamilleService {
         this._FamillesList.next(values);
       });
   }
+
+  public getFamillesShotguns(): void {
+    this.httpClient
+      .get(FamilleRoutes.GET_FAMILLES_SHOTGUNS())
+      .subscribe((values: Array<Famille>) => {
+        this._FamillesList.next(values);
+      });
+  }
 }

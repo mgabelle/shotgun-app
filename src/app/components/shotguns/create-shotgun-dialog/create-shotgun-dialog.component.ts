@@ -23,7 +23,7 @@ export class CreateShotgunDialogComponent implements OnInit {
     const todayDate: Date = new Date();
     todayDate.setHours(0, 0, 0, 0);
     return date >= todayDate;
-  };
+  }
 
   constructor(
     private familleService: FamilleService,

@@ -30,6 +30,10 @@ export class FamilleRoutes {
     public static GET_FAMILLES() {
         return FamilleRoutes.BASE_FAMILLE_URL();
     }
+
+    public static GET_FAMILLES_SHOTGUNS() {
+      return `${FamilleRoutes.BASE_FAMILLE_URL()}/shotguns`;
+  }
 }
 
 export class PartieCommunesRoutes {

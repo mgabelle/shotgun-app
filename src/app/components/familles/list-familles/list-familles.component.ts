@@ -8,9 +8,14 @@ import { Famille } from "src/app/model/famille.model";
   styleUrls: ["./list-familles.component.css"]
 })
 export class ListFamillesComponent implements OnInit {
+  public famillesShotguns: Array<Famille>;
   constructor(private famillesService: FamilleService) {
-    this.famillesService.famillesList.subscribe((values: Array<Famille>) => {});
+    this.famillesService.famillesList.subscribe((values: Array<Famille>) => {
+      this.famillesShotguns = values;
+    });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.famillesService.getFamillesShotguns();
+  }
 }

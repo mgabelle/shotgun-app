@@ -1,3 +1,4 @@
+import { ListResidencesComponent } from "./components/residences/list-residences/list-residences.component";
 import { ShotgunsComponent } from "./components/shotguns/list-shotguns/shotguns.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: "residences",
-    component: ListFamillesComponent
+    component: ListResidencesComponent
   }
 ];
 

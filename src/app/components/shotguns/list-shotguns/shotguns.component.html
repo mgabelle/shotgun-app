@@ -1,4 +1,4 @@
-<h1>Tableau des shotguns</h1>
+<h1 *ngIf="!listeShotguns">Tableau des shotguns</h1>
 <table
   mat-table
   [dataSource]="dataSource"
