@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { CreateShotgunComponent } from "./components/shotguns/create-shotgun/create-shotgun.component";
 import { ListFamillesComponent } from "./components/familles/list-familles/list-familles.component";
 
+
 const routes: Routes = [
   {
     path: "",
