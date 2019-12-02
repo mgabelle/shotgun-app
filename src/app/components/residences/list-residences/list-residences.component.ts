@@ -8,11 +8,16 @@ import { Residence } from "../../../model/residence.model";
   styleUrls: ["./list-residences.component.css"]
 })
 export class ListResidencesComponent implements OnInit {
+  public residencesShotguns: Array<Residence>;
   constructor(private residencesService: ResidencesService) {
     this.residencesService.residencesList.subscribe(
-      (values: Array<Residence>) => {}
+      (values: Array<Residence>) => {
+        this.residencesShotguns = values;
+      }
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.residencesService.getResidencesShotguns();
+  }
 }
