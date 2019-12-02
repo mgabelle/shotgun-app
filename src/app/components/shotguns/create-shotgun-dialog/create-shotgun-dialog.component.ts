@@ -21,8 +21,10 @@ export class CreateShotgunDialogComponent implements OnInit {
 
   dateFilter = (date: Date) => {
     const todayDate: Date = new Date();
+    var threeDays: Date = new Date();
+    threeDays.setDate(threeDays.getDate()+3);
     todayDate.setHours(0, 0, 0, 0);
-    return date >= todayDate;
+    return date <= threeDays && date >= todayDate;
   }
 
   constructor(
