@@ -19,6 +19,6 @@ export class ListResidencesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.residencesService.getResidencesShotguns();
+    this.residencesService.getResidences();
   }
 }
